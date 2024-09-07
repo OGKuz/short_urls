@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block main_block %}
+
+    <form method = 'POST' action="" class="main_form">
+        {{ form.csrf_token}}
+        <div>
+            <label>
+                {{ form.long_url.label }}
+            </label>
+            {{ form.long_url }}
+        </div>
+        <div>
+            <label> 
+                {{  form.sub_button.label }}
+            </label>
+            {{ form.sub_button }}
+        </div>
+    </form>
+
+    {% if short_url %}
+        <a href="{{ url_for ('redirect_to_link', link = short_url) }}"> {{ url_for ('redirect_to_link', link = short_url) }}</a>
+        
+    {% endif %}
+
+{% endblock main_block %}

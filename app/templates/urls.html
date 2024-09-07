@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block main_block %}
+
+    <table class="all_urls">
+        <tr>
+            <th> ID </th>
+            <th> short_url </th>
+            <th> long_url </th>
+            <th> date_of_create </th>
+            <th> count_view </tH>
+        </tr>
+        {%  for link in context %}
+            <tr>
+                <td> {{ link.id }}</td>
+                <td> {{ link.short_url }}</td>
+                <td> {{ link.long_url }}</td>
+                <td> {{ link.date }}</td>
+                <td> {{ link.count_view }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock main_block %}
